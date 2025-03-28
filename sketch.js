@@ -8,8 +8,22 @@ let Size03 = 160;
 let Size04 = 200;
 let Size00 = 40;
 
+function windowResized() {
+  console.log("resized");
+  let width = document.querySelector("#sketch-div").clientWidth;
+  console.log(width);
+  let height = document.querySelector("#sketch-div").clientHeight;
+  console.log(height);
+ 
+  resizeCanvas(width, windowHeight);
+  
+}
+
 function setup() {
-  createCanvas(500, 500);
+  var canvas = createCanvas(windowWidth, windowHeight)
+  canvas.parent('sketch-div')
+  canvas.position(0, 0)
+  canvas.style('z-index', '-1')
   rectMode(CENTER);
   frameRate(100);
 }
