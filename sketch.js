@@ -14,7 +14,6 @@ function windowResized() {
   console.log(width);
   let height = document.querySelector("#sketch-div").clientHeight;
   console.log(height);
- 
   resizeCanvas(width, windowHeight);
   
 }
@@ -29,7 +28,7 @@ function setup() {
 }
 
 function draw() {
-  background(random(230, 255), random(255, 230));
+  background('black');
   noStroke();
   
   push();
