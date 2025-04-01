@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/addons/p5.sound.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -8,8 +9,23 @@
     <script src="sketch.js"></script>
   </head>
   <body>
-    
-    <div class="sketch-div" id="sketch-div"> </div>
-     <h1> Dansing flower</h1>
+
+    <button onclick="location.href='second.html'" style="position: absolute; top: 20px; left: 20px; padding: 10px 20px; font-size: 8px; cursor: pointer;">Перейти на second.html
+      
+    </button>
+
+    <h1> Dansing flower</h1>
+
+
+    <div id=""
+
+    <a-scene>
+      <a-entity gltf-model="url(images/TREES_02.glb)"></a-entity>
+      <a-entity camera look-controls wasd-controls="acceleration:50; pointerLockEnabled: true" position="0 0 0"></a-entity>
+      <a-entity light="type: hemisphere; color: #FFF; intensity: 1" position="0 -10 0"></a-entity>
+    </a-scene>
+
+    <div class="sketch-div" id="sketch-div"></div>
+
   </body>
 </html>

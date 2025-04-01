@@ -3,14 +3,19 @@ html, body {
   padding: 0;
 }
 
+.sketch-div {
+  z-index: 1;
+}
 
 h1 {
+  position: relative;
   display: flex;
   justify-content: center;
   height: 100vh;
-  z-index: 10;
+  z-index: 2;
 
   font-size: 128px;
   font-weight: 50;
-  color:orange;
+  color:white;
 }
+
