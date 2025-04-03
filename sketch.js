@@ -8,6 +8,9 @@ let Size03 = 160;
 let Size04 = 200;
 let Size00 = 40;
 
+let scene = 1;
+let objects = [];
+
 function windowResized() {
   console.log("resized");
   let width = document.querySelector("#sketch-div").clientWidth;
@@ -28,6 +31,81 @@ function setup() {
 }
 
 function draw() {
+  if (mouseIsPressed === true) {
+    if (scene < 2) {
+      scene++;
+    }
+
+    else {
+      scene = 1;
+    }
+
+  }
+
+  if (scene == 1) {
+    scene1();
+  }
+
+  if (scene == 2) {
+    scene2();
+  }
+
+}
+
+function scene1() {
+
+  push();
+  if (objects.length < 600) { // Set a max count
+    objects.push({ x: random(width), y: random(height) });
+  }
+
+  for (let obj of objects) {
+    
+    let x2 = mouseX;
+    let y2 = mouseY;
+    line(obj.x, obj.y, x2, y2);
+    
+    stroke('white');
+    
+    let strokeW = random(10, 20);
+    strokeWeight(strokeW); 
+  }
+  pop();
+  
+  push();
+  if (objects.length < 600) { // Set a max count
+    objects.push({ x: random(width), y: random(height) });
+  }
+
+  for (let obj of objects) {
+    // Draw a line from the object position to a random point
+    let x2 = mouseX;
+    let y2 = mouseY;
+    line(obj.x, obj.y, x2, y2);
+    
+    
+    
+    if (mouseIsPressed === true) {
+      stroke('yellow');
+      let strokeW2 = 20;
+      strokeWeight(strokeW2); 
+    }
+    
+    else {
+      stroke(random(0,100), random(0, 0), random(0,200));
+      let strokeW = random(4, 8);
+      strokeWeight(strokeW); 
+    }
+     
+  }
+  pop();
+
+}
+
+
+
+function scene2() {
+
   background('purple');
   noStroke();
   
@@ -112,10 +190,5 @@ function draw() {
   //Size01 = Size01 + 0.8;
   rect(0, 0, Size00);
   pop();
-  
-  
-  
-  
-  
-}
 
+}
